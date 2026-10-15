@@ -84,7 +84,7 @@
         }}
     >
         {#snippet child({ props, wrapperProps, open })}
-            <div {...wrapperProps} data-overlay-root class="z-[130]">
+            <div {...wrapperProps} data-overlay-root class={cn('z-[130]', open ? 'visible' : 'invisible')}>
                 <div
                     {...mergeProps(props, { onmouseenter: context.cancelHover, onmouseleave: context.hoverLeave })}
                     bind:this={context.panel}
